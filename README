@@ -1,0 +1,8 @@
+PageRank Integrity Meter
+
+- robots.txt?
+- sitemap.xml?
+- 1-level crawl
+  - % internal links
+  - % outbound links
+  - % internal / total links
