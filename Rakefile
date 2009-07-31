@@ -75,8 +75,8 @@ def convert_template(template)
   
   buf  = StringIO.new
   buf << "templates['#{template_name}'] = function(_vals) {\n"
-  buf << "var _out = [];\n"
-  buf << "with (_vals || {}) {\n"
+  buf << "  var _out = [];\n"
+  buf << "  with (_vals || {}) {\n"
   
   File.readlines(template).each do |line|
     line.split(/(\<%.*?%\>)/).each do |segment|
@@ -84,19 +84,19 @@ def convert_template(template)
       
       if segment[0..2] == '<%='
         expr = segment.match(/\<%=(.*?)%\>/).captures.first.strip
-        buf << "_out.push(#{expr});\n"
+        buf << "    _out.push(#{expr});\n"
       elsif segment[0..1] == '<%'
         stmt = segment.match(/\<%(.*?)%\>/).captures.first.strip
-        buf << "#{stmt}\n"
+        buf << "    #{stmt}\n"
       else
         segment = segment.gsub("'", "\\'").gsub("\n", "\\n")
-        buf << "_out.push('#{segment}');\n"
+        buf << "    _out.push('#{segment}');\n"
       end
     end
   end
   
-  buf << "}\n"
-  buf << "return _out.join('');\n"
+  buf << "  }\n"
+  buf << "  return _out.join('');\n"
   buf << "};\n\n"
   
   buf.string
