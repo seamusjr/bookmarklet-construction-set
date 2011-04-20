@@ -5,3 +5,4 @@ var $ = jQuery.noConflict(true);
 $('head').append($('<style type="text/css"></style>').html(Styles));
 
 // Your application JS goes here
+$('body').append(Templates.example({ name: 'world' }));
