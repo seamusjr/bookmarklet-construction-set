@@ -18,10 +18,19 @@ function showTimelineNav() {
 	$('#stories-nav').show().find('.timeline').animate({ 'top': '0px' }, 250);
 };
 
+function incrementTimelineImages() {
+	$('.viewer').animate({'left': '-=240'}, 500);
+};
+
 $('.advance-timeline').click(function(e) {
 	e.preventDefault();
 	//alert('hello');
 	$('.controls ol').css('position','absolute'); $('.controls ol').animate({'left': '-250px'}, 500);  
 	$('.viewer').animate({'left': '-11725px'}, 500);
 	showTimelineNav();
+});
+
+$('.inc-viewer').click(function(e) {
+	e.preventDefault();
+	incrementTimelineImages();
 });
