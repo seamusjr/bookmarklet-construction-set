@@ -18,3 +18,5 @@ loaded as a bookmarklet. The anatomy of a project looks like this:
 - `css`: The `app.scss` file goes here. This will be rendered to CSS as a string named `Styles`. The default `app.js` injects it into the document head. Add any files you want and include them in the `Rakefile` :convert_css task.
 
 # Have fun!
+
+***
