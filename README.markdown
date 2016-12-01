@@ -19,4 +19,3 @@ loaded as a bookmarklet. The anatomy of a project looks like this:
 
 # Have fun!
 
-***
